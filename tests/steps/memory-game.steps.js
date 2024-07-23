@@ -7,6 +7,6 @@ export function openTheGame () {
 }
 
 export function memoryTableDimensionsValidation (rows, columns) {
-  const cells = screen.getAllByTestId('minefield-cell', { exact: false })
-  return cells.length === rows * columns
+  const cards = screen.getAllByTestId('memory-card', { exact: false })
+  return cards.length === rows * columns
 }

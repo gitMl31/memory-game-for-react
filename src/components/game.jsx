@@ -1,7 +1,26 @@
+import Card from './card'
+
 export default function Game () {
   return (
     <div>
-      <h1>Memory</h1>
+      <div>
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+      </div>
+      <div>
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+      </div>
+      <div>
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+      </div>
     </div>
   )
 }
