@@ -1,7 +1,5 @@
 export default function Card () {
     return (
-        <div data-testid= 'memory-card'>
-            <h1>O</h1>
-        </div>
+        <button className='memory-card' data-testid= 'memory-card'>.</button>
     )
 }

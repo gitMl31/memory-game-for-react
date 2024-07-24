@@ -1,9 +1,9 @@
 import { render, screen, fireEvent } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import Game from '../../src/components/game'
+import Home from '../../src/app/page'
 
 export function openTheGame () {
-  render(<Game />)
+  render(<Home />)
 }
 
 export function memoryTableDimensionsValidation (rows, columns) {

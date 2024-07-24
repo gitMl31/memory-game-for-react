@@ -2,6 +2,6 @@ import Game from '../components/game'
 
 export default function Home () {
   return (
-    <Game />
+    <Game numberOfRows={3} numberOfColumns={4}/>
   )
 }
