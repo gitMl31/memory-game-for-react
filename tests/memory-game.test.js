@@ -50,7 +50,7 @@ defineFeature(feature, (test) => {
   test('Uncovering a card - Disabling the card', ({ given, when, then }) => {
     given('the player opens the game', () => {
       steps.openTheGame()
-    })  
+    })
 
     given('the player loads the following mock data', (docString) => {
       pending()
