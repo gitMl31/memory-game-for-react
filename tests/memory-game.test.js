@@ -18,7 +18,7 @@ defineFeature(feature, (test) => {
     })
 
     then('all the cards should be covered', () => {
-      expect(steps.areAllCartsCovered()).toBe(true)
+      expect(steps.areAllCardsCovered()).toBe(true)
     })
   })
   test('Starting game - All the cards should be enabled', ({ given, then }) => {
@@ -27,7 +27,7 @@ defineFeature(feature, (test) => {
     })
 
     then('all the cards should be enabled', () => {
-      pending()
+      expect(steps.areAllCardsEnabled()).toBe(true)
     })
   })
   test('Uncovering a card with the mouse - With the left mouse button', ({ given, when, then }) => {

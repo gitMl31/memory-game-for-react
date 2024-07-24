@@ -1,6 +1,7 @@
 import Card from './card'
 
 export default function Game ({ numberOfRows, numberOfColumns }) {
+  
   const cardTableData = []
   for (let row = 0; row < numberOfRows; row += 1) {
     cardTableData.push([])

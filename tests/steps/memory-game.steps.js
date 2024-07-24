@@ -11,11 +11,22 @@ export function memoryTableDimensionsValidation (rows, columns) {
   return cards.length === rows * columns
 }
 
-export function areAllCartsCovered () {
+export function areAllCardsCovered () {
   let result = true
   const cards = screen.getAllByTestId('memory-card', { exact: false })
   cards.forEach(card => {
     if (!card.classList.contains('covered')) {
+      result = false
+    }
+  })
+  return result
+}
+
+export function areAllCardsEnabled () {
+  let result = true
+  const cards = screen.getAllByTestId('memory-card', { exact: false })
+  cards.forEach((card) => {
+    if (card.disabled === true) {
       result = false
     }
   })
