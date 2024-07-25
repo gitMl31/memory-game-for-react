@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import MockDataForm from './mockDataForm'
 import Card from './card'
 
-export default function Game ({ numberOfRows = 3, numberOfColumns = 4}) {
+export default function Game ({ numberOfRows = 3, numberOfColumns = 4 }) {
   const [mockDataFormVisible, setMockDataFormVisible] = useState(false)
   const [mockData, setMockData] = useState('')
 
