@@ -32,3 +32,38 @@ export function areAllCardsEnabled () {
   })
   return result
 }
+
+export function setMockData (data) {
+  data = data.trim()
+
+  // userEvent.keyboard('ctrl+m') TO DO try to explain why userEvent doesn't work
+  fireEvent.keyDown(screen.getByTestId('cartTable'), {
+    key: 'm',
+    keyCode: 77,
+    which: 77,
+    code: 'KeyM',
+    location: 0,
+    altKey: false,
+    ctrlKey: true,
+    metaKey: false,
+    shiftKey: false,
+    repeat: false
+  })
+
+  const textInput = screen.getByTestId('mock-data-input')
+  const submitButton = screen.getByTestId('mock-data-submit')
+  fireEvent.change(textInput, { target: { value: data } })
+  fireEvent.click(submitButton)
+}
+
+export function uncoverCard (rowPosition, colPosition) {
+  fireEvent.click(screen.getByTestId('memory-card card-row' + rowPosition + '-col' + colPosition, { exact: true }))
+}
+
+export function isCardUncovered (rowPosition, colPosition) {
+  const cell = screen.getByTestId('memory-card card-row' + rowPosition + '-col' + colPosition, { exact: true })
+  if (cell.classList.contains('covered')) {
+    return false
+  }
+  return true
+}

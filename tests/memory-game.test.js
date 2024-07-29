@@ -36,15 +36,15 @@ defineFeature(feature, (test) => {
     })
 
     given('the player loads the following mock data', (docString) => {
-      pending()
+      steps.setMockData(docString)
     })
 
-    when(/^the player click on the card \("(.*)","(.*)"\)$/, (arg0, arg1) => {
-      pending()
+    when(/^the player click on the card \("(.*)","(.*)"\)$/, (rowPosition, colPosition) => {
+      steps.uncoverCard(rowPosition, colPosition)
     })
 
-    then(/^the card \("(.*)","(.*)"\) should be uncovered$/, (arg0, arg1) => {
-      pending()
+    then(/^the card \("(.*)","(.*)"\) should be uncovered$/, (rowPosition, colPosition) => {
+      expect(steps.isCardUncovered(rowPosition, colPosition)).toBe(true)
     })
   })
   test('Uncovering a card - Disabling the card', ({ given, when, then }) => {

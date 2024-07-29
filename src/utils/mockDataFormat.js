@@ -1,4 +1,4 @@
-function parseMockDataToString (data) {
+export  function parseMockDataToString (data) {
     let strData = data.split(/\r?\n/).join('-')
     strData = strData.replaceAll(' ', '')
     strData = strData.replaceAll('|', '')
@@ -8,7 +8,7 @@ function parseMockDataToString (data) {
     return strData
 }
 
-function validateMockData(mockData) {
+export function validateMockData(mockData) {
     let isValidData
     if (mockData === undefined) {
         isValidData = false
@@ -36,7 +36,7 @@ function validateMockDataRows(dataRows) {
 }
 
 function validateMockDataRow(data) {
-    const newLocal = '^[*o]*$'
+    const newLocal = '^[ab]*$'
     const regex = new RegExp(newLocal)
     return regex.test(data)
 }

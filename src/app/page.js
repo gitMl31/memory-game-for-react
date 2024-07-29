@@ -28,7 +28,7 @@ export default function Home () {
   return (
     <>
       {mockDataFormVisible && <MockDataForm setData={setMockDataForm} />}
-      <Game />
+      <Game mockData={mockData} />
     </>
   )
 }
