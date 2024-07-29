@@ -61,8 +61,16 @@ export function uncoverCard (rowPosition, colPosition) {
 }
 
 export function isCardUncovered (rowPosition, colPosition) {
-  const cell = screen.getByTestId('memory-card card-row' + rowPosition + '-col' + colPosition, { exact: true })
-  if (cell.classList.contains('covered')) {
+  const card = screen.getByTestId('memory-card card-row' + rowPosition + '-col' + colPosition, { exact: true })
+  if (card.classList.contains('covered')) {
+    return false
+  }
+  return true
+}
+
+export function isCardDisabled (rowPosition, colPosition) {
+  const card = screen.getByTestId('memory-card card-row' + rowPosition + '-col' + colPosition, { exact: true })
+  if (card.classList.contains('disabled')) {
     return false
   }
   return true

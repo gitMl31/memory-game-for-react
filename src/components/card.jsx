@@ -2,7 +2,6 @@ import { useState } from 'react'
 
 export default function Card ({rowPosition, colPosition}) {
   const [isCovered, setIsCovered] = useState(true)
-  console.log(rowPosition, colPosition)
   function handleClick (e) {
     e.preventDefault()
     setIsCovered(false)
@@ -15,7 +14,7 @@ export default function Card ({rowPosition, colPosition}) {
         data-testid={`memory-card card-row${rowPosition}-col${colPosition}`}
         className='memory-card covered' 
       >
-        .
+        0
       </button>
     )
   } else {
@@ -23,6 +22,7 @@ export default function Card ({rowPosition, colPosition}) {
       <button  
         data-testid={`memory-card card-row${rowPosition}-col${colPosition}`}
         className='memory-card' 
+        disabled
       >
         a
       </button>

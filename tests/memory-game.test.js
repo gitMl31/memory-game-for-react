@@ -53,15 +53,15 @@ defineFeature(feature, (test) => {
     })
 
     given('the player loads the following mock data', (docString) => {
-      pending()
+      steps.setMockData(docString)
     })
 
-    when(/^the player click on the card \("(.*)","(.*)"\)$/, (arg0, arg1) => {
-      pending()
+    when(/^the player click on the card \("(.*)","(.*)"\)$/, (rowPosition, colPosition) => {
+      steps.uncoverCard(rowPosition, colPosition)
     })
 
-    then(/^the card \("(.*)","(.*)"\) should be disabled$/, (arg0, arg1) => {
-      pending()
+    then(/^the card \("(.*)","(.*)"\) should be disabled$/, (rowPosition, colPosition) => {
+      expect(steps.isCardDisabled(rowPosition, colPosition)).toBe(true)
     })
   })
   test('Uncovering two cards that are not a couple - cards have to be covered', ({ given, when, and, then }) => {
