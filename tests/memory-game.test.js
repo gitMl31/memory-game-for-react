@@ -84,13 +84,13 @@ defineFeature(feature, (test) => {
     then(/^the card \("(.*)","(.*)"\) should be covered$/, (rowPosition, colPosition) => {
       setTimeout(() => {
         expect(steps.isCardCovered(rowPosition, colPosition)).toBe(true)
-      }, 500)
+      }, 500) //TODO await
     })
 
     and(/^the card \("(.*)","(.*)"\) should be covered$/, (rowPosition, colPosition) => {
       setTimeout(() => {
         expect(steps.isCardCovered(rowPosition, colPosition)).toBe(true)
-      }, 500)
+      }, 500) //TODO await
     })
   })
   test('Uncovering two cards which are a couple - Uncover the cards', ({ given, when, and, then }) => {
@@ -99,23 +99,23 @@ defineFeature(feature, (test) => {
     })
 
     given('the player loads the following mock data', (docString) => {
-      pending()
+      steps.setMockData(docString)
     })
 
-    when(/^the player click on the card \("(.*)","(.*)"\)$/, (arg0, arg1) => {
-      pending()
+    when(/^the player click on the card \("(.*)","(.*)"\)$/, (rowPosition, colPosition) => {
+      steps.uncoverCard(rowPosition, colPosition)
     })
 
-    and(/^the player click on the card \("(.*)","(.*)"\)$/, (arg0, arg1) => {
-      pending()
+    and(/^the player click on the card \("(.*)","(.*)"\)$/, (rowPosition, colPosition) => {
+      steps.uncoverCard(rowPosition, colPosition)
     })
 
-    then(/^the card \("(.*)","(.*)"\) should be uncover$/, (arg0, arg1) => {
-      pending()
+    then(/^the card \("(.*)","(.*)"\) should be uncover$/, (rowPosition, colPosition) => {
+      expect(steps.isCardUncovered(rowPosition, colPosition)).toBe(true)
     })
 
-    and(/^the card \("(.*)","(.*)"\) should be uncover$/, (arg0, arg1) => {
-      pending()
+    and(/^the card \("(.*)","(.*)"\) should be uncover$/, (rowPosition, colPosition) => {
+      expect(steps.isCardUncovered(rowPosition, colPosition)).toBe(true)
     })
   })
   test('Uncovering all couples - all cards must be disabling', ({ given, when, and, then }) => {
@@ -124,27 +124,27 @@ defineFeature(feature, (test) => {
     })
 
     given('the player loads the following mock data', (docString) => {
-      pending()
+      steps.setMockData(docString)
     })
 
-    when(/^the player click on the card \("(.*)","(.*)"\)$/, (arg0, arg1) => {
-      pending()
+    when(/^the player click on the card \("(.*)","(.*)"\)$/, (rowPosition, colPosition) => {
+      steps.uncoverCard(rowPosition, colPosition)
     })
 
-    and(/^the player click on the card \("(.*)","(.*)"\)$/, (arg0, arg1) => {
-      pending()
+    and(/^the player click on the card \("(.*)","(.*)"\)$/, (rowPosition, colPosition) => {
+      steps.uncoverCard(rowPosition, colPosition)
     })
 
-    and(/^the player click on the card \("(.*)","(.*)"\)$/, (arg0, arg1) => {
-      pending()
+    and(/^the player click on the card \("(.*)","(.*)"\)$/, (rowPosition, colPosition) => {
+      steps.uncoverCard(rowPosition, colPosition)
     })
 
-    and(/^the player click on the card \("(.*)","(.*)"\)$/, (arg0, arg1) => {
-      pending()
+    and(/^the player click on the card \("(.*)","(.*)"\)$/, (rowPosition, colPosition) => {
+      steps.uncoverCard(rowPosition, colPosition)
     })
 
     then('all the cards should be disabled', () => {
-      pending()
+      expect(steps.areAllCardsDisabled()).toBe(true)
     })
   })
   test('Uncovering all couples - all cards must be uncovered', ({ given, when, and, then }) => {
@@ -153,27 +153,27 @@ defineFeature(feature, (test) => {
     })
 
     given('the player loads the following mock data', (docString) => {
-      pending()
+      steps.setMockData(docString)
     })
 
-    when(/^the player click on the card \("(.*)","(.*)"\)$/, (arg0, arg1) => {
-      pending()
+    when(/^the player click on the card \("(.*)","(.*)"\)$/, (rowPosition, colPosition) => {
+      steps.uncoverCard(rowPosition, colPosition)
     })
 
-    and(/^the player click on the card \("(.*)","(.*)"\)$/, (arg0, arg1) => {
-      pending()
+    and(/^the player click on the card \("(.*)","(.*)"\)$/, (rowPosition, colPosition) => {
+      steps.uncoverCard(rowPosition, colPosition)
     })
 
-    and(/^the player click on the card \("(.*)","(.*)"\)$/, (arg0, arg1) => {
-      pending()
+    and(/^the player click on the card \("(.*)","(.*)"\)$/, (rowPosition, colPosition) => {
+      steps.uncoverCard(rowPosition, colPosition)
     })
 
-    and(/^the player click on the card \("(.*)","(.*)"\)$/, (arg0, arg1) => {
-      pending()
+    and(/^the player click on the card \("(.*)","(.*)"\)$/, (rowPosition, colPosition) => {
+      steps.uncoverCard(rowPosition, colPosition)
     })
 
     then('all the cards should be uncovered', () => {
-      pending()
+      expect(steps.areAllCardsUncovered()).toBe(true)
     })
   })
 })

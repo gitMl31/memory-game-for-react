@@ -22,11 +22,33 @@ export function areAllCardsCovered () {
   return result
 }
 
+export function areAllCardsUncovered () {
+  let result = true
+  const cards = screen.getAllByTestId('memory-card', { exact: false })
+  cards.forEach(card => {
+    if (card.classList.contains('covered')) {
+      result = false
+    }
+  })
+  return result
+}
+
 export function areAllCardsEnabled () {
   let result = true
   const cards = screen.getAllByTestId('memory-card', { exact: false })
   cards.forEach((card) => {
     if (card.disabled === true) {
+      result = false
+    }
+  })
+  return result
+}
+
+export function areAllCardsDisabled () {
+  let result = true
+  const cards = screen.getAllByTestId('memory-card', { exact: false })
+  cards.forEach((card) => {
+    if (card.disabled !== true) {
       result = false
     }
   })
