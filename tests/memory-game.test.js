@@ -70,23 +70,27 @@ defineFeature(feature, (test) => {
     })
 
     given('the player loads the following mock data', (docString) => {
-      pending()
+      steps.setMockData(docString)
     })
 
-    when(/^the player click on the card \("(.*)","(.*)"\)$/, (arg0, arg1) => {
-      pending()
+    when(/^the player click on the card \("(.*)","(.*)"\)$/, (rowPosition, colPosition) => {
+      steps.uncoverCard(rowPosition, colPosition)
     })
 
-    and(/^the player click on the card \("(.*)","(.*)"\)$/, (arg0, arg1) => {
-      pending()
+    and(/^the player click on the card \("(.*)","(.*)"\)$/, (rowPosition, colPosition) => {
+      steps.uncoverCard(rowPosition, colPosition)
     })
 
-    then(/^the card \("(.*)","(.*)"\) should be covered$/, (arg0, arg1) => {
-      pending()
+    then(/^the card \("(.*)","(.*)"\) should be covered$/, (rowPosition, colPosition) => {
+      setTimeout(() => {
+        expect(steps.isCardCovered(rowPosition, colPosition)).toBe(true)
+      }, 500)
     })
 
-    and(/^the card \("(.*)","(.*)"\) should be covered$/, (arg0, arg1) => {
-      pending()
+    and(/^the card \("(.*)","(.*)"\) should be covered$/, (rowPosition, colPosition) => {
+      setTimeout(() => {
+        expect(steps.isCardCovered(rowPosition, colPosition)).toBe(true)
+      }, 500)
     })
   })
   test('Uncovering two cards which are a couple - Uncover the cards', ({ given, when, and, then }) => {

@@ -1,10 +1,10 @@
 import { useState } from 'react'
 
-export default function Card ({rowPosition, colPosition}) {
-  const [isCovered, setIsCovered] = useState(true)
+export default function Card ({rowPosition, colPosition, coupleId, isCovered, onClick}) {
+
   function handleClick (e) {
     e.preventDefault()
-    setIsCovered(false)
+    onClick(rowPosition, colPosition, coupleId)
   }
 
   if (isCovered) {
@@ -24,7 +24,7 @@ export default function Card ({rowPosition, colPosition}) {
         className='memory-card' 
         disabled
       >
-        a
+        {coupleId}
       </button>
     )
   }
