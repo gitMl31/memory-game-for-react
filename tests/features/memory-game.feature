@@ -69,6 +69,17 @@ Feature: Memory Game
                 Then the card ("1","1") should be covered    
                 And the card ("1","2") should be covered  
 
+        Scenario: Uncovering two cards that are not a couple - have to be covered after a pause of one second
+               Given the player loads the following mock data
+                        """
+                        | a | b |
+                        | a | b |
+                        """
+                When the player click on the card ("1","1")    
+                And the player click on the card ("1","2")   
+                Then the card ("1","1") should be covered after "1" seconds   
+                And the card ("1","2") should be covered after "1" seconds    
+
         Scenario: Uncovering two cards which are a couple - Uncover the cards
                 Given the player loads the following mock data
                         """
